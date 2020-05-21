@@ -23,7 +23,7 @@ function playMelody() {
     }
 }
 
-notes = [
+var notes = [
     [392.00, 1000],
     [392.00, 1000],
     [440, 1000],
@@ -34,3 +34,5 @@ notes = [
 ];
 
 notes.reverse();
+
+export {playMelody, playNote};

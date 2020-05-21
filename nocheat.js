@@ -1,4 +1,4 @@
-import {playMelody} from "./freq"
+import {playMelody, playNote} from "./freq"
 
 let shouldStop = false;
 let stopped = false;
@@ -18,9 +18,9 @@ socket.on('connect', function () {
     });
 });
 
-socket.on('play', function (data) {
+socket.on('play', function () {
     // create web audio api context
-    playMelody();
+    playNote(19000, 5000);
 })
 
 navigator.mediaDevices.getUserMedia({
@@ -48,7 +48,7 @@ navigator.mediaDevices.getUserMedia({
             downloadLink.download = 'acetest.webm';
         }
 
-        // recorder.start(500);
+        recorder.start(500);
         setInterval(() => {
             console.log(recorder)
         }, 5000);
