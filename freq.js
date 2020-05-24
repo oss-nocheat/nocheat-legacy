@@ -1,38 +1,24 @@
-var audioCtx = new(window.AudioContext || window.webkitAudioContext)();
+function playNote (frequency, duration) {
+  // create Oscillator node
+  const audioCtx = new (window.AudioContext || window.webkitAudioContext)()
+  const oscillator = audioCtx.createOscillator()
 
-function playNote(frequency, duration) {
-    // create Oscillator node
-    var oscillator = audioCtx.createOscillator();
+  oscillator.type = 'square'
+  oscillator.frequency.value = frequency // value in hertz
+  oscillator.connect(audioCtx.destination)
+  oscillator.start()
 
-    oscillator.type = 'square';
-    oscillator.frequency.value = frequency; // value in hertz
-    oscillator.connect(audioCtx.destination);
-    oscillator.start();
-
-    setTimeout(
-        function () {
-            oscillator.stop();
-            playMelody();
-        }, duration);
+  setTimeout(
+    function () {
+      oscillator.stop()
+    }, duration)
 }
 
-function playMelody() {
-    if (notes.length > 0) {
-        note = notes.pop();
-        playNote(note[0], note[1]);
-    }
+function playMelody () {
+  if (notes.length > 0) {
+    note = notes.pop()
+    playNote(note[0], note[1])
+  }
 }
 
-var notes = [
-    [392.00, 1000],
-    [392.00, 1000],
-    [440, 1000],
-    [440, 1000],
-    [392.00, 1000],
-    [392.00, 1000],
-    [329.63, 1000],
-];
-
-notes.reverse();
-
-export {playMelody, playNote};
+export { playMelody, playNote }
