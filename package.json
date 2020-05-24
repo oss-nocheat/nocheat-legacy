@@ -6,21 +6,26 @@
   "author": "Myeongwon Choi <auspic7@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@material-ui/core": "^4.0.0",
+    "@material-ui/icons": "^4.9.1",
+    "@types/react": "^16.8.6",
     "babel-cli": "6",
     "babel-preset-react-app": "3",
+    "bootstrap": "^4.5.0",
     "global": "^4.4.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
     "socket.io-client": "^2.3.0",
     "socketio": "^1.0.0"
   },
   "devDependencies": {
-    "eslint": "^7.0.0",
+    "eslint": "^7.1.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.20.0",
-    "eslint-plugin-standard": "^4.0.1"
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-vue": "^6.2.2"
   }
 }

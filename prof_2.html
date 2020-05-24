@@ -1,52 +1,122 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>NO-CHEAT-HELPER</title>
-        <meta charset = "UTF-8">
-        <style>
-            @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
-            body {
-                background-color: #83C1BD;
-            }
-            #name{
-                width: 200px;
-                text-align:center;
-                font-size:40px;
-                font-family: 'Jeju Gothic';
-                color:#E5E4E4;
-                margin-left:30px;
-            }
-            .test_list{
-                background-color: #9DC7CF;
-                text-align:left;
-                font-size:30px;
-                font-family: 'Jeju Gothic';
-                color:#45504D;
-                width: 1300px;
 
-                border:5px solid #538A93;
-                padding-bottom: 15px;
-                padding-top: 15px;
-                padding-left: 15px;
-                margin-left:40px;
-            }
+<head>
+    <title>NO-CHEAT-HELPER</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
 
-            a:link {text-decoration: none; color:#45504D;}
-            a:visited{text-decoration: none; color:#45504D;}
-            a:active{text-decoration: none; color:#45504D;}
-            a:hover{text-decoration: none; color:#45504D;}
+        body {
+            background-color: #83C1BD;
+        }
 
-        </style>
-    </head>
-    <body>
-            <p id="name">시험 LIST</p>
+        #name {
+            width: 200px;
+            text-align: center;
+            font-size: 40px;
+            font-family: 'Jeju Gothic';
+            color: #E5E4E4;
+            margin-left: 30px;
+        }
 
-            <!-- 여기서부턴 서버에서 데이터 받아서 만드는걸로 해야함. 일단 데모로 만듦!-->
-            <p class="test_list">
-                <a href="prof_2_1class.html" class="button">
-                1 - 수치해석 제 1분반 중간고사
-                </a>
-            </p>
+        .test_list {
+            background-color: #9DC7CF;
+            text-align: left;
+            font-size: 30px;
+            font-family: 'Jeju Gothic';
+            color: #45504D;
+            width: 1300px;
 
-    </body>
+            border: 5px solid #538A93;
+            padding-bottom: 15px;
+            padding-top: 15px;
+            padding-left: 15px;
+            margin-left: 40px;
+        }
+
+        a:link {
+            text-decoration: none;
+            color: #45504D;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: #45504D;
+        }
+
+        a:active {
+            text-decoration: none;
+            color: #45504D;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #45504D;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="name">시험 LIST</p>
+
+    <!-- 여기서부턴 서버에서 데이터 받아서 만드는걸로 해야함. 일단 데모로 만듦!-->
+    <p class="test_list">
+        <a href="#" class="button">
+            1 - 수치해석 제 1분반 중간고사
+        </a>
+    </p>
+
+
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script>
+        let student_list;
+        
+    </script>
+
+</body>
+
 </html>

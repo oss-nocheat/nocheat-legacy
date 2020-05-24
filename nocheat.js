@@ -1,23 +1,34 @@
-import { playMelody, playNote } from './freq'
-import './node_modules/socket.io-client'
+import { playNote } from './freq'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import io from 'socket.io-client'
+import ExamsTable from './components/ExamsTable'
 
-let shouldStop = false
-let stopped = false
-var recordedChunks = []
 const downloadLink = document.getElementById('download')
 const stopButton = document.getElementById('stop')
+const registerButton = document.getElementById('register_student')
+const idField = document.getElementById('student_id')
+const nameField = document.getElementById('name')
+const SERVER_URL = 'http://localhost:5000'
 
 stopButton.addEventListener('click', function () {
   console.log('stop')
   shouldStop = true
 })
 
-var socket = io('http://localhost:5000/')
+var socket = io(SERVER_URL)
 
-socket.on('connect', function () {
-  socket.emit('message', {
-    data: 'blabla'
-  })
+registerButton.onclick = function (event) {
+  console.log('click')
+  socket.emit('register', { id: idField.value, name: nameField.value })
+}
+
+socket.on('exam_update', function () {
+  fetchAndUpdateTable()
+})
+
+socket.on('message', function (data) {
+  console.log(data.id)
 })
 
 socket.on('play', function (melody) {
@@ -25,6 +36,12 @@ socket.on('play', function (melody) {
   playNote(440, 5000)
 })
 
+fetchAndUpdateTable()
+
+let shouldStop = false
+let stopped = false
+var recordedChunks = []
+// Get record
 navigator.mediaDevices.getUserMedia({
   audio: true,
   video: false
@@ -50,7 +67,18 @@ navigator.mediaDevices.getUserMedia({
     }
 
     recorder.start(500)
-    setInterval(() => {
-      console.log(recorder)
-    }, 5000)
+    // setInterval(() => {
+    //   console.log(recorder)
+    // }, 6000)
   })
+
+function fetchAndUpdateTable () {
+  let exams
+  fetch(SERVER_URL + '/exam')
+    .then(response => response.json())
+    .then(json => {
+      exams = json.result
+      console.log(exams)
+      ReactDOM.render((<ExamsTable rows={exams}></ExamsTable>), document.getElementById('table'))
+    })
+}
