@@ -1,1 +1,76 @@
-student
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NO-CHEAT-HELPER</title>
+    <meta charset = "UTF-8">
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
+        body {
+            background-color: #83C1BD;
+        }
+        #name{
+            width: 500px;
+            text-align:center;
+            font-size:30px;
+            font-family: 'Jeju Gothic';
+            color:#E5E4E4;
+            border:3px solid #E5E4E4;
+            padding-top:10px;
+            padding-bottom: 10px;
+            margin-left:30px;
+        }
+        .option{
+            text-align:left;
+            font-size:50px;
+            font-family: 'Jeju Gothic';
+            color:#45504D;
+            margin-left: 30px;
+            margin-botton: 30px;
+        }
+        .wrap{
+            font-size:30px;
+            font-family:Impact Roman;
+            font-weight: bold;
+            width:200px;
+            margin-left: 30px;
+            margin-top: 70px;
+            text-align: center;
+        }
+        a {
+            -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+            -moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+            -ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+            -o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+            transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+            display: block;
+            margin: 20px auto;
+            max-width: 180px;
+            text-decoration: none;
+            border-radius: 4px;
+            padding: 20px 30px;
+        }
+
+        a.button {
+            color: rgba(30, 22, 54, 0.6);
+            box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+        }
+
+        a.button:hover {
+            color: rgba(255, 255, 255, 0.85);
+            box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
+        }
+    </style>
+</head>
+<body>
+    <p id="name">학생으로 로그인 하기</p>
+
+        <p class="option">1. 이름 입력</p>
+        <input name="student_name" type="text" style="width:1500px; height:80px; font-size:30px; margin-left: 30px;"/>
+        <p class="option">2. 학번 입력</p>
+        <input name="student_ID" type="text" style="width:1500px; height:80px; font-size:30px; margin-left: 30px;"/>
+        <div class="wrap">
+            <a href="stud_list.html" class="button">Submit</a>
+        </div>
+
+</body>
+</html>
